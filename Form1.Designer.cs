@@ -29,6 +29,8 @@
     private void InitializeComponent()
     {
       panel1 = new Panel();
+      textBox1 = new TextBox();
+      progressBar = new ProgressBar();
       labelResult = new Label();
       label1 = new Label();
       cboStatus = new ComboBox();
@@ -36,13 +38,13 @@
       button1 = new Button();
       backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
       webAgent = new Microsoft.Web.WebView2.WinForms.WebView2();
-      progressBar = new ProgressBar();
       panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)webAgent).BeginInit();
       SuspendLayout();
       // 
       // panel1
       // 
+      panel1.Controls.Add(textBox1);
       panel1.Controls.Add(progressBar);
       panel1.Controls.Add(labelResult);
       panel1.Controls.Add(label1);
@@ -52,8 +54,24 @@
       panel1.Dock = DockStyle.Top;
       panel1.Location = new Point(0, 0);
       panel1.Name = "panel1";
-      panel1.Size = new Size(800, 90);
+      panel1.Size = new Size(800, 211);
       panel1.TabIndex = 0;
+      // 
+      // textBox1
+      // 
+      textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+      textBox1.Location = new Point(12, 68);
+      textBox1.Multiline = true;
+      textBox1.Name = "textBox1";
+      textBox1.Size = new Size(776, 132);
+      textBox1.TabIndex = 6;
+      // 
+      // progressBar
+      // 
+      progressBar.Location = new Point(70, 50);
+      progressBar.Name = "progressBar";
+      progressBar.Size = new Size(403, 10);
+      progressBar.TabIndex = 5;
       // 
       // labelResult
       // 
@@ -98,7 +116,7 @@
       button1.Name = "button1";
       button1.Size = new Size(132, 34);
       button1.TabIndex = 0;
-      button1.Text = "解析資訊";
+      button1.Text = "for 開發測試";
       button1.UseVisualStyleBackColor = true;
       button1.Click += button1_Click;
       // 
@@ -108,26 +126,19 @@
       webAgent.CreationProperties = null;
       webAgent.DefaultBackgroundColor = Color.White;
       webAgent.Dock = DockStyle.Fill;
-      webAgent.Location = new Point(0, 90);
+      webAgent.Location = new Point(0, 211);
       webAgent.Margin = new Padding(8);
       webAgent.Name = "webAgent";
       webAgent.Padding = new Padding(8);
-      webAgent.Size = new Size(800, 360);
+      webAgent.Size = new Size(800, 328);
       webAgent.TabIndex = 1;
       webAgent.ZoomFactor = 1D;
-      // 
-      // progressBar
-      // 
-      progressBar.Location = new Point(70, 50);
-      progressBar.Name = "progressBar";
-      progressBar.Size = new Size(381, 10);
-      progressBar.TabIndex = 5;
       // 
       // Form1
       // 
       AutoScaleDimensions = new SizeF(9F, 19F);
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(800, 450);
+      ClientSize = new Size(800, 539);
       Controls.Add(webAgent);
       Controls.Add(panel1);
       Name = "Form1";
@@ -150,5 +161,6 @@
     private Label label1;
     private Label labelResult;
     private ProgressBar progressBar;
+    private TextBox textBox1;
   }
 }
